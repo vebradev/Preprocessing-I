@@ -1,1 +1,134 @@
-/* Compile your LESS file! */
+@import "../css/reset.css";
+:root {
+  font-size: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  background-color: #262626;
+}
+.container {
+  background-color: #212121;
+}
+.container h1,
+.container h2 {
+  font-family: 'Merriweather', serif;
+}
+.container section {
+  padding: 2.5rem;
+}
+@media (min-width: 960px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    border: 0.1rem solid #000;
+  }
+}
+nav {
+  background-color: #000;
+  padding: 1rem;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+@media (min-width: 800px) {
+  nav ul {
+    justify-content: flex-end;
+  }
+}
+nav a {
+  display: inline-block;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+.hero h1 {
+  margin: 0 0 1.2rem 0;
+  font-size: 2rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+}
+.hero p {
+  margin: 0 0 1rem 0;
+  line-height: 1.2rem;
+  text-align: justify;
+}
+.hero img {
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hero h1 {
+    margin: 0 0 1.2rem 0;
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    font-weight: 700;
+  }
+  .hero .info {
+    width: 65%;
+  }
+  .hero div:first-child {
+    padding: 0 2rem 0 0;
+  }
+}
+@media (min-width: 800px) and (min-width: 960px) {
+  .hero .info {
+    width: 80%;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  background-color: #212121;
+}
+.content h2 {
+  display: inline-block;
+  margin: 0 0 1rem 0;
+}
+.content .skills,
+.content .history {
+  margin: 0 0 1rem 0;
+}
+.content ul li {
+  margin: 0.5rem 0;
+  list-style: inside;
+}
+@media (min-width: 800px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .content .div {
+    width: 50%;
+  }
+}
+.cta {
+  background-color: #bb1333;
+  text-align: center;
+}
+.cta a {
+  padding: 0 0 0.5rem 0;
+  border-bottom: 0.2rem solid #ffffff;
+  display: inline-block;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+.cta a:hover {
+  color: #000;
+  border-bottom: 0.5rem solid #000;
+}

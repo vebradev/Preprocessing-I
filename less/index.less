@@ -1,59 +1,169 @@
-// Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+// Imports
+@import "../css/reset.css";
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+// Fonts
+@fontSize: 100%;
+
+// Colours
+@colourText: #ffffff;
+@colourNav: #000;
+@colourLambda: #bb1333;
+@lightPrimary: #5f5fc4;
+@normalPrimary: #212121;
+@darkPrimary: #262626;
+
+// Breakpoints
+@tabletView: 800px;
+@desktopView: 960px;
+
+// Main Build (mobile first <3)
+
+:root {
+	font-size: @fontSize;
+}
+
+* {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	background-color: @darkPrimary;
 }
 
-/* Set every element's box-sizing to border-box */
-* {
-    box-sizing: border-box;
+.container {
+	background-color: @normalPrimary;
+
+	& h1, h2 {
+		font-family: 'Merriweather', serif;
+	}
+
+	& section {
+		padding: 2.5rem;
+	}
+
+	@media(min-width: @desktopView) {
+		max-width: @desktopView;
+		margin: 0 auto;
+		border: 0.1rem solid #000;
+	}
 }
 
-html, body {
-    height: 100%;
+nav {
+	background-color: @colourNav;
+	padding: 1rem;
+	
+	& ul {
+		display: flex;
+		justify-content: space-around;
+
+		@media(min-width: @tabletView) {
+			justify-content: flex-end;
+		}
+	}
+	
+	& a {
+		display: inline-block;
+		padding: 1rem;
+		color: @colourText;
+		text-decoration: none;
+	}
 }
 
+.hero {
+	display: flex;
+	flex-direction: column;
+	color: @colourText;
+
+	& h1 {
+		margin: 0 0 1.2rem 0;
+		font-size: 2rem;
+		line-height: 2.2rem;
+		font-weight: 700;
+	}
+
+	& p {
+		margin: 0 0 1rem 0;
+		line-height: 1.2rem;
+		text-align: justify;
+	}
+
+	& img {
+		width: 100%;
+	}
+
+	@media(min-width: @tabletView) {
+		flex-direction: row;
+		justify-content: space-between;
+		
+		& h1 {
+			margin: 0 0 1.2rem 0;
+			font-size: 2.2rem;
+			line-height: 2.2rem;
+			font-weight: 700;
+		}
+		
+		& .info {
+			width: 65%;
+
+			@media(min-width: @desktopView) {
+				width: 80%;
+			}
+		}
+
+		& div:first-child {
+			padding: 0 2rem 0 0;
+		}
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	color: @colourText;
+	background-color: @normalPrimary;
+
+	& h2 {
+		display: inline-block;
+		margin: 0 0 1rem 0;
+	}
+
+	& .skills, & .history {
+		margin: 0 0 1rem 0;
+	}
+
+	& ul li {
+		margin: 0.5rem 0;
+		list-style: inside;
+	}
+
+	@media(min-width: @tabletView) {
+		flex-direction: row;
+		justify-content: space-around;
+		
+		& .div {
+			width: 50%;
+		}
+	}
+}
+
+.cta {
+	background-color: @colourLambda;
+	text-align: center;
+
+	& a {
+		padding: 0 0 0.5rem 0;
+		border-bottom: 0.2rem solid @colourText;
+		display: inline-block;
+		font-weight: 700;
+		color: @colourText;
+		text-decoration: none;
+
+		&:hover {
+			color: @colourNav;
+			border-bottom: 0.5rem solid @colourNav;
+		}
+	}
+}
